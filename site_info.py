@@ -12,10 +12,11 @@ site_schema = {
         "state":"",
         "postalCode":""
     },
-    "location" : {
-        "longitude":"",
-        "latitude":""
-    },
+    "location" : [
+        ## Longitude and latitude information are stored here
+        ("longitude",""),
+        ("latitude","")
+    ],
     "phone" : "",
     "type" : "",
     "url" : "",
