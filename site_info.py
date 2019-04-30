@@ -42,9 +42,50 @@ services = {
 }
 
 hours_open = {
-    "day" : ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
-    "time_open" : "",
-    "time_close" : "",
+    "day" : {
+        "sunday":
+        {
+            "open": False,
+            "time_open":"",
+            "time_close":""
+        },
+        "monday":
+        {
+            "open": False,
+            "time_open":"",
+            "time_close":""
+        },
+        "tuesday":
+        {
+            "open": False,
+            "time_open":"",
+            "time_close":""
+        },
+        "wednesday":
+        {
+            "open": False,
+            "time_open":"",
+            "time_close":""
+        },
+        "thursday":
+        {
+            "open": False,
+            "time_open":"",
+            "time_close":""
+        },
+        "friday":
+        {
+            "open": False,
+            "time_open":"",
+            "time_close":""
+        },
+        "saturday":
+        {
+            "open": False,
+            "time_open":"",
+            "time_close":""
+        },
+    },
     "24Hours" : False,
     "notes": ""
 }
