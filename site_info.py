@@ -12,8 +12,10 @@ site_schema = {
         "state":"",
         "postalCode":""
     },
-    "longitude": "",
-    "latitude" : "",
+    "location" : {
+        "longitude":"",
+        "latitude":""
+    },
     "phone" : "",
     "type" : "",
     "url" : "",
