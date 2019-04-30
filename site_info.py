@@ -31,3 +31,15 @@ site_schema = {
     "notes":"",
     "services": ['service_name_here']
 }
+
+services = {
+    "type": ""
+}
+
+hours_open = {
+    "day" : ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
+    "time_open" : "",
+    "time_close" : "",
+    "24Hours" : False,
+    "notes": ""
+}
