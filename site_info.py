@@ -4,11 +4,14 @@ import json
 
 site_schema = {
     "name": "",
-    "address1": "",
-    "address2": "",
-    "city" : "",
-    "state":"",
-    "postal code" : "",
+    "Address" : {
+        ## Address information is contained here
+        "address1":"",
+        "address2":"",
+        "city":"",
+        "state":"",
+        "postalCode":""
+    },
     "longitude": "",
     "latitude" : "",
     "phone" : "",
@@ -43,3 +46,10 @@ hours_open = {
     "24Hours" : False,
     "notes": ""
 }
+
+statuses = {
+    "status" : "",
+    "username":"",
+    "created":""
+}
+
