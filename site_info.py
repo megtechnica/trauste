@@ -2,46 +2,8 @@ import json
 
 ## define the key/value pairs for attributes associated with locations
 
-site_schema = {
-    "name": "",
-    "Address" : {
-        ## Address information is contained here
-        "address1":"",
-        "address2":"",
-        "city":"",
-        "state":"",
-        "postalCode":""
-    },
-    "location" : [
-        ## Longitude and latitude information are stored here
-        ("longitude",""),
-        ("latitude","")
-    ],
-    "phone" : "",
-    "type" : "",
-    "url" : "",
-    "isShelter":False,
-    "isIntake":False,
-    "hasMeals":False,
-    "isFood":False,
-    "isFamily":False,
-    "isPublic":False,
-    "isPrivate":False,
-    "isChildren":[False,0],
-    "isWomen":[False,0],
-    "isMen":[False,0],
-    "isDayCenter":False,
-    "otherLimits":"",
-    "hours": "",
-    "otherServices": "",
-    "notes":"",
-    "services": ['service_name_here']
-}
-
-services = {
-    "type": ""
-}
-
+## must define the hours_open variable to instantiate it inside the "hours" 
+## key.
 hours_open = {
     "day" : {
         "sunday":
@@ -90,10 +52,52 @@ hours_open = {
     "24Hours" : False,
     "notes": ""
 }
+## services will provide a list of the services offered by the shelter.
+services = {
+    "type": ""
+}
 
+## this will contain a list of the updates to the quantity of beds by 
+## the username.  
 statuses = {
     "status" : "",
     "username":"",
     "created":""
+}
+
+site_schema = {
+    "name": "",
+    "Address" : {
+        ## Address information is contained here
+        "address1":"",
+        "address2":"",
+        "city":"",
+        "state":"",
+        "postalCode":""
+    },
+    "location" : [
+        ## Longitude and latitude information are stored here
+        ("longitude",""),
+        ("latitude","")
+    ],
+    "phone" : "",
+    "type" : "",
+    "url" : "",
+    "isShelter":False,
+    "isIntake":False,
+    "hasMeals":False,
+    "isFood":False,
+    "isFamily":False,
+    "isPublic":False,
+    "isPrivate":False,
+    "isChildren":[False,0],
+    "isWomen":[False,0],
+    "isMen":[False,0],
+    "isDayCenter":False,
+    "otherLimits":"",
+    "hours": [hours_open],
+    "services": [services],
+    "notes":"",
+    "statuses": [statuses]
 }
 
