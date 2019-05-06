@@ -10,6 +10,7 @@ content = json.dumps(json_content)
 content = json.loads(content)
 content = content["records"]
 
-result = next(filter(lambda r: r['fields']['zip'] == passed_zip, content), None)
-print(result)
+def find_zip_code(passed_zip, data):
+        return next(filter(lambda r: r['fields']['zip'] == passed_zip, content), None)
+
 
