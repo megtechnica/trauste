@@ -1,5 +1,5 @@
 import re
-import HTTP_Requests
+from message_request_main import find_zip_code
 
 class SMS_Msg_Request:
     def __init__(self, sender_num, msg_body):
@@ -10,9 +10,10 @@ class SMS_Msg_Request:
         ## this regular expression will check to see if self.msg_body has 5 digits at the beginning
         ## and MWFTV at the end.
         ## M = Male     W = Woman   F = Family  T = Trans   V = Veteran
-        if re.search("^\d{5}.\Z[MmWwFfTtVv]$"):  
-            self.zip_code = re.search("^\d{5}")
-            self.character = re.search("\Z[MWFTV]")
+        if re.search(r"^\d{5}.\Z[MmWwFfTtVv]$"):  
+            self.zip_code = re.search(r"^\d{5}", zip_code)
+            self.character = re.search(r"\Z[MWFTV]", zip_code)
+            self.is_valid = True
         else:
-            self.return_msg = 'Hello {0}, please review your message for errors: {1}'.format(self.sender_num, self.msg_body)
+            self.is_valid = False
 
