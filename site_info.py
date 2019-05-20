@@ -1,3 +1,4 @@
+## might needs this, might delete later idk.  
 import json
 
 ## define the key/value pairs for attributes associated with locations
@@ -75,11 +76,8 @@ site_schema = {
         "state":"",
         "postalCode":""
     },
-    "location" : [
-        ## Longitude and latitude information are stored here
-        ("longitude",""),
-        ("latitude","")
-    ],
+    "latitude": 0,
+    "longitude": 0,
     "phone" : "",
     "type" : "",
     "url" : "",
@@ -93,6 +91,8 @@ site_schema = {
     "isChildren":[False,0],
     "isWomen":[False,0],
     "isMen":[False,0],
+    "isTrans":[False,0],
+    "isVeteran":[False,0],
     "isDayCenter":False,
     "otherLimits":"",
     "hours": [hours_open],

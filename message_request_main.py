@@ -1,12 +1,9 @@
 import json
-
 import requests
-import Class_Objects_SMS
 from credentials import account_sid, auth_token, twilio_cell
 from flask import Flask, request
 from twilio import twiml
 from twilio.rest import Client
-import re
 
 client = Client(account_sid, auth_token)
 @app.route('/sms', methods=['POST'])
@@ -17,12 +14,16 @@ def get_sms():
                         "text": message_body}
     return message_contents
 
-def send_error_message()
+## def send_error_message(return_msg):
+    ## pass
+    ## send out return error msg through twilio
 
-def find_zip_code(zip_code):
+def find_coords_from_zip_code(zip_code):
+    ## This finds the latitude and longitude of the zip code passed from the sms message
     url = "https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=co&lang=en&rows=5000&facet=state&facet=timezone&facet=dst&refine.state=CO"
     json_content = requests.get(url).json()
     content = json.dumps(json_content)
     content = json.loads(content)
     content = content["records"]
-    return next(filter(lambda r: r['fields']['zip'] == passed_zip, content), None)
+    data_set = next(filter(lambda r: r['fields']['zip'] == zip_code, content), None)
+    return data_set["fields"]["geopoint"]
