@@ -1,22 +1,21 @@
 import re
 import message_request_main
 
+
+
 def check_if_valid(message_contents):
     msg_body = message_contents["text"]
-    msg_body_re = re.compile(msg_body, re.IGNORECASE)
-    if msg_body_re.search("\d{5}+\s[MFWTV]{1}") == True:
-        msg_zip_code = msg_body_re.search("\d{5}")
-        msg_character = msg_body_re.search("\s[MWTFV]")
-        database_query = {"zip_code": msg_zip_code,
-                        "char": msg_character}
-        return database_query
-    elif msg_body_re.search("\d{5}") == True && msg_body_re.search("\s[MWTFV]") =! True:
-        pass
-    elif msg_body_re.search("\d{5}") != True && msg_body_re.search("\s[MWTFV]") == True:
-        pass
-    elif msg_body_re.search("\{5}") != True && msg_body_re.search("\s[MWTFV]") != True:
-        pass
-    else: 
+    try:
+        msg_result_re = re.split('\s', message_contents)
+        zipcode_re = re.match('\d{5}', msg_result_re[0])
+        char_re = re.match('[mMwWfFvVtT]', msg_result_re[1])
+        if char_re and zipcode_re:
+            return msg_result_re
+        else:
+            ## error message return
+            pass
+    except IndexError:
+        ## error message return
         pass
 
 def find_change_in_long(latitude):
